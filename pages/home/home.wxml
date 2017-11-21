@@ -1,0 +1,4 @@
+<!--pages/home/home.wxml-->
+<image class="title" src = "/static/images/icons/NOBLE.png"></image>
+<view></view>
+<image class="navi_button" bindtap='navi' src = "/static/images/icons/26.pic.png"></image>

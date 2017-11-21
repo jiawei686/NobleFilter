@@ -1,0 +1,15 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/album/album"
+    
+  ],
+  "window":{
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "NOBLE",
+    "backgroundColor": "#000",
+    "backgroundTextStyle": "light"
+  }
+
+}

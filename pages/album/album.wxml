@@ -1,0 +1,62 @@
+<!-- 弹出层 -->
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view> 
+<!--content--> 
+<!--使用animation属性指定需要执行的动画--> 
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}"> 
+ 
+ <!--drawer content--> 
+ <view class="drawer_title">温馨提示</view> 
+ <view class="drawer_content"> 
+    <view class="top grid"> 
+      1. Felix滤镜大师不同其他滤镜小程序，滤镜图片由纯本地算法生成，不会花费您的流量；
+    </view> 
+    <view class="top grid"> 
+      2. 非常感谢您的使用。软件正在不断改进中，也欢迎您的投诉和建议，作者微信：cjw1369
+    </view> 
+  </view> 
+  <view class="btn_ok" bindtap="powerDrawer" data-statu="close">确定</view> 
+</view> 
+
+
+
+
+<!-- 绘图层 -->
+<view class="albumBack">
+  <view class="photoAlbum">
+      <canvas canvas-id="mainCanvas"  style = "width : {{mainCanvasWidth}}px ;height : {{mainCanvasHeight}}px ; margin-top : {{block_height}}px;" id = "chosedPhoto" />
+  </view>
+</view>
+
+
+
+<!--{{alertDisplay}}-->
+<view class="alertText {{alertDisplay}}">  {{alertText}}
+  <view class="white-background"> 
+    <button class = "OK" bindtap="cancelAlert" >好</button>
+  </view>
+  
+</view>
+
+
+
+
+
+<!-- 底部滤镜层 -->
+<view class="filterButtonsCurtain {{filterDisplay}}">
+  <scroll-view scroll-x >
+      <view class="filterButton" bindtap = "changeFilter" id = "Normal"><image class="filter-small" src="/static/images/icons/29.pic.jpg"></image></view>
+      <view class="filterButton" bindtap = "changeFilter" id = "Cherry"><image class="filter-small" src="/static/images/icons/30.pic.jpg"></image></view>
+      <view class="filterButton" bindtap = "changeFilter" id = "Rose"><image class="filter-small" src="/static/images/icons/31.pic.jpg"></image></view>
+      <view class="filterButton" bindtap = "changeFilter" id = "Starlight"><image class="filter-small" src="/static/images/icons/32.pic.jpg"></image></view>
+      <view class="filterButton" bindtap = "changeFilter" id = "Gingham"><image class="filter-small" src="/static/images/icons/33.pic.jpg"></image></view>
+      <view class="filterButton" bindtap = "changeFilter" id = "Aden"><image class="filter-small" src="/static/images/icons/36.pic.jpg"></image></view>
+  </scroll-view>
+</view>
+<view class="buttonCurtain" >
+    <!-- <image class="icon_left" src="/static/images/icons/34.pic.jpg"></image> 
+    <image class="icon_left" src="/static/images/icons/35.pic.jpg"></image> -->
+    <view></view>
+    <view class="chooseButton" bindtap="chooseImg">重选</view>
+    <view class="vertical-line"></view>
+    <view class="chooseButton {{rightButton}}" bindtap = "{{rightButtonFunction}}">{{rightButtonText}}</view>
+</view>
