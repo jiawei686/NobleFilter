@@ -1,17 +1,27 @@
 // pages/home/home.js
 Page({
-
+  data: {
+    animationData: {},
+    BackgroundAnimation: {}
+  },
   /**
    * 页面的初始数据
    */
   navi: function(){
-    wx.navigateTo({
-      url: '/pages/album/album',
+    var BackgroundAnimation = wx.createAnimation({
+      duration: 1000,
+      timingFunction: 'ease',
     })
-  },
-
-  data: {
-  
+    BackgroundAnimation.opacity(1).step();
+    this.setData({
+      BackgroundAnimation: BackgroundAnimation.export()
+    })
+    setTimeout(function(){
+      wx.navigateTo({
+        url: '/pages/album/album',
+      })
+    },1000)
+    
   },
 
   /**
@@ -32,7 +42,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var BackgroundAnimation = wx.createAnimation({
+      duration: 1000,
+      timingFunction: 'ease',
+    })
+    BackgroundAnimation.scale(0,0).step();
+    this.setData({
+      BackgroundAnimation: BackgroundAnimation.export()
+    })
   },
 
   /**
